@@ -66,7 +66,7 @@ location ~ /\. {
 		#auth_basic "Restricted";
 		#auth_basic_user_file htpasswd;
 
-#418 is a dummy http code
+#goto considered harmful, unless the servers a teapot
 		error_page 418 = @site;
 		recursive_error_pages on;
 
