@@ -36,11 +36,13 @@ server {
 	include /etc/nginx/conf.d/static_files.conf;
 
 	location /sitemap.xml.gz {
+		include /etc/nginx/conf.d/exclude_bots.conf;
 		add_header Cache-Control "public, must-revalidate";
 		break;
 	}
 
 	location /sitemap.xml {
+		include /etc/nginx/conf.d/exclude_bots.conf;
 ## when its time to turn on the redirect, remove these lines
 		add_header Cache-Control "public, must-revalidate";
 		break;
